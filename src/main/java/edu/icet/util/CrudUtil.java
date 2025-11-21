@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class CrudUtil {
-    public <T>T execute(String sql,Object ...arg) throws SQLException {
+    public static <T>T execute(String sql, Object ...arg) throws SQLException {
         PreparedStatement pstm = DBConnection.getInstance().getConnection().prepareStatement(sql);
         for (int i = 0;i< arg.length;i++){
             pstm.setObject(i+1,arg[i]);

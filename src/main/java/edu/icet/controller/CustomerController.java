@@ -11,7 +11,7 @@ import java.util.List;
 
 
 @CrossOrigin
-@RestController("/customer")
+@RestController
 public class CustomerController {
     CustomerService customerService = ServiceFactory.getInstance().getFactory(ServiceEnum.CUSTOMER);
 
