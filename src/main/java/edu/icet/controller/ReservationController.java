@@ -27,4 +27,28 @@ public class ReservationController {
         }
     }
 
+    public boolean addReservation(){
+        try {
+           return reservationService.save(new Reservation());
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public boolean cancelReservation(String id){
+        try {
+            return reservationService.delete(id);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public boolean updateReservation(Reservation reservation){
+        try {
+            return reservationService.update(reservation);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }

@@ -7,4 +7,5 @@ public interface CrudRepository<T> extends SuperRepository {
     boolean save(T t) throws SQLException;
     boolean delete(String id) throws SQLException;
     List<T> getAll() throws SQLException;
+    boolean update(T t) throws SQLException;
 }

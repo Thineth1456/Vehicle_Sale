@@ -3,12 +3,13 @@ package edu.icet.repository.custom.Impl;
 import edu.icet.dto.Reservation;
 import edu.icet.repository.custom.ReservationRepository;
 import edu.icet.util.CrudUtil;
+import org.springframework.stereotype.Service;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
+@Service
 public class ReservationRepositoryImpl implements ReservationRepository {
     @Override
     public boolean save(Reservation reservation) throws SQLException {
@@ -29,5 +30,10 @@ public class ReservationRepositoryImpl implements ReservationRepository {
         }
 
         return reservationList;
+    }
+
+    @Override
+    public boolean update(Reservation reservation) throws SQLException {
+        return CrudUtil.execute("UPDATE FROM reservation ");
     }
 }

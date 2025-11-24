@@ -10,4 +10,6 @@ public interface ReservationService {
     List<Reservation> getAll() throws SQLException;
     boolean save(Reservation reservation) throws SQLException;
     boolean delete(String id) throws SQLException;
+
+    boolean update(Reservation reservation) throws SQLException;
 }

@@ -13,7 +13,7 @@ public class ServiceFactory {
 
     public <T extends SuperService>T getFactory(ServiceEnum type){
         switch (type){
-            case CUSTOMER : return (T) new CustomerServiceImpl();
+            case CUSTOMER :
             case VEHICLE:
         }
         return null;
