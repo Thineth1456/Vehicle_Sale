@@ -6,6 +6,7 @@ import edu.icet.service.custom.CustomerService;
 import edu.icet.util.ServiceEnum;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.SQLException;
 import java.util.List;
 
 
@@ -17,13 +18,25 @@ public class CustomerController {
     @GetMapping("/getAllCustomers")
     public List<Customer> getCustomers(){
 
-        return customerService.getAll();
+        try {
+            return customerService.getAll();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
     @PostMapping("/addCustomer")
     public List<Customer> addCustomer(@RequestBody Customer customer){
-        customerService.save(customer);
+        try {
+            customerService.save(customer);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
 
-        return customerService.getAll();
+        try {
+            return customerService.getAll();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
     @DeleteMapping("/deleteCustomer")
     public void delete(@RequestBody String id){
@@ -32,6 +45,10 @@ public class CustomerController {
     @GetMapping("/GetContacts")
     public  List<String> getAllContactNo(){
 
-        return null;
+        try {
+            return customerService.getAllContactNo();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

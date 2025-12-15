@@ -30,4 +30,14 @@ public class CustomerRepositoryImpl implements CustomerRepository {
         }
         return cusList;
     }
+
+    @Override
+    public boolean update(Customer customer) throws SQLException {
+        return false;
+    }
+
+    @Override
+    public Customer search(String id) throws SQLException {
+        return CrudUtil.execute("SELECT * FROM customer WHERE id = ?",id);
+    }
 }
