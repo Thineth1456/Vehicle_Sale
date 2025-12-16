@@ -35,7 +35,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public Customer search(String id) {
+    public Customer search(String id) throws SQLException {
         return repository.search(id);
     }
 

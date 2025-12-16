@@ -12,7 +12,7 @@ public interface CustomerService extends SuperService {
     List<Customer> getAll() throws SQLException;
     boolean update(Customer customer);
     boolean delete(String id);
-    Customer search(String id);
+    Customer search(String id) throws SQLException;
     List<String> getAllContactNo() throws SQLException;
 
 }

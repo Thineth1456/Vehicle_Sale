@@ -51,4 +51,12 @@ public class CustomerController {
             throw new RuntimeException(e);
         }
     }
+
+    public Customer searchCustomer(String id){
+        try {
+            return customerService.search(id);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
